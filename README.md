@@ -23,3 +23,8 @@ Follow these steps to get the Uno game running on your local machine:
    npm start
 
 4. Opne your browser and navigate to: http://localhost:3000
+
+## Team Members
+1. Emorie Jackson
+2. Jenny Wang
+3. Ehsanullah Dehzad
