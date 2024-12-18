@@ -14,7 +14,7 @@ Before you begin, ensure you have the following installed on your system:
 Follow these steps to get the Uno game running on your local machine:
 
 1. Clone the repository:
-   git clode https://github.com/e-dehzad/uno_game.git
+   git clone https://github.com/e-dehzad/uno_game.git
 
 2. Build the App:
    npm run build
