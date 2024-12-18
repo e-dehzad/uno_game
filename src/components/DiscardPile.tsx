@@ -1,27 +1,30 @@
 import React from 'react';
-import { Card } from '../utils/gameUtils';
+import { Card } from '../utils/gameUtils'; // Importing the Card type from game utilities
 
+// Props for the DiscardPile component, with an optional topCard
 interface DiscardPileProps {
-  topCard: Card;
+  topCard?: Card; // Represents the top card on the discard pile
 }
 
+// DiscardPile component to display the top card or show an empty state
 const DiscardPile: React.FC<DiscardPileProps> = ({ topCard }) => {
+  // If no card is present, render an empty discard pile
+  if (!topCard) {
+    return (
+      <div className="w-24 h-36 rounded-lg shadow-md bg-gray-300 flex items-center justify-center">
+        <span className="text-gray-600 text-2xl font-bold">Empty</span>
+      </div>
+    );
+  }
+
+  // Render the discard pile with the top card's color and value
   return (
-    <div className={`w-24 h-36 rounded-lg shadow-md ${getBackgroundColor(topCard.color)} flex items-center justify-center border-2 border-gray-300`}>
+    <div
+      className={`w-24 h-36 rounded-lg shadow-md bg-${topCard.color}-500 flex items-center justify-center`}
+    >
       <span className="text-white text-2xl font-bold">{topCard.value}</span>
     </div>
   );
 };
 
-function getBackgroundColor(color: string): string {
-  switch (color) {
-    case 'red': return 'bg-red-600';
-    case 'blue': return 'bg-blue-600';
-    case 'green': return 'bg-green-600';
-    case 'yellow': return 'bg-yellow-500';
-    default: return 'bg-gray-600';
-  }
-}
-
 export default DiscardPile;
-

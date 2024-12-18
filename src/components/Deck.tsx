@@ -1,14 +1,15 @@
-import React from 'react';
-
+// Define props for the Deck component, requiring an onDraw function
 interface DeckProps {
-  onDraw: () => void;
+  onDraw: () => void; // Callback function triggered when the deck is clicked
 }
 
+// Deck component representing the draw pile in an Uno game
 const Deck: React.FC<DeckProps> = ({ onDraw }) => {
   return (
     <button
-      className="w-24 h-36 bg-blue-600 text-white rounded-lg shadow-md hover:bg-blue-700 font-bold transition-colors"
-      onClick={onDraw}
+      // Styling for the deck button: size, color, hover effect, and text styling
+      className="w-24 h-36 bg-blue-500 rounded-lg shadow-md hover:bg-blue-600 text-white font-bold"
+      onClick={onDraw} // Call the onDraw function when the button is clicked
     >
       Draw
     </button>
@@ -16,4 +17,3 @@ const Deck: React.FC<DeckProps> = ({ onDraw }) => {
 };
 
 export default Deck;
-
